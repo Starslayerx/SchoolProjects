@@ -2,4 +2,4 @@
 School course homeworks
 
 ## Files
-[ x ] First Course Homework
+- :heavy_check_mark: First Course Homework
