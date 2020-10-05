@@ -2,4 +2,4 @@
 School course homeworks
 
 ## Files
-[-] First Course Homework
+[ x ] First Course Homework
