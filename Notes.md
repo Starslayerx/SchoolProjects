@@ -1,12 +1,5 @@
 不常见知识点总结
 ## C Primer Plus notes
-### getline
-- getline(char_type *__s, streamsize __n), 读取特定长度的字符串
-```cpp
-char name[10];
-cin.getline(name, 10);
-cout << name << endl;
-```
 ## Unions
 > union is a data format can hold differernt data types but only one type at a time.
 ```cpp
