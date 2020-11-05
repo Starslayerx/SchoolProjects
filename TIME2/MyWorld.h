@@ -6,6 +6,7 @@ class MyWorld
     private:
         char * pdata;
         int length;
+        const int cnumber;
     public:
         static int global;
         MyWorld();
@@ -24,13 +25,20 @@ class MyWorld
             memcpy(pdata, b.data(), this->length * sizeof(char));
             return b;
         }
+        
+        static void stest()
+        {
+            cout << "Static number: " << global << endl;
+            ++global;
+        }
 };
+int MyWorld::global(0);
 
 // default copy constructor
-MyWorld::MyWorld() { };
+MyWorld::MyWorld() : cnumber(6) { };
 
 // swallow copy constructor
-MyWorld::MyWorld(char * c, int n)
+MyWorld::MyWorld(char * c, int n) : cnumber(6)
 {
     length = n;
     pdata = c;
@@ -67,7 +75,7 @@ void MyWorld::show() const
     for (int i = 0; i < length; ++i)
         cout << pdata[i];
     cout << endl;
-    //cout << "static number: " << global << endl;
+    cout << "Const number: " << cnumber << endl;
 }
 
 #endif

@@ -12,6 +12,10 @@ int main()
     MyWorld mine(ch, n);
     
     mine.show();
+    cout << endl;
+    for (int i = 0; i < 3; ++i)
+        mine.stest();
+    cout << endl;
     
 
 
