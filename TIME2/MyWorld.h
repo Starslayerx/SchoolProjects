@@ -14,6 +14,7 @@ class MyWorld
         //MyWorld(const MyWorld&);
         ~MyWorld();
         
+        void single();
         void show() const;
         char* data() const { return pdata;}
         int len() const {return length;}
@@ -55,7 +56,7 @@ MyWorld::MyWorld(const MyWorld &world)
     memcpy(pdata, world.data(), length * sizeof(char));
 }
 
-// only for deep constructor
+// deep destructor
 MyWorld::~MyWorld()
 {
     delete[] pdata;
@@ -78,4 +79,11 @@ void MyWorld::show() const
     cout << "Const number: " << cnumber << endl;
 }
 
+void MyWorld::single()
+{
+    for (int i = 0; i < length; ++i)
+    {
+        cout << pdata[i];
+    }
+}
 #endif
