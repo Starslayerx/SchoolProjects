@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     Rational ra{1, 6};
-    Rational rc{-1, 6};
+    Rational rc{0, 6};
     Rational test{ra + rc};
     test.show();
 

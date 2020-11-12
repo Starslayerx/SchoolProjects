@@ -1,11 +1,8 @@
 class Rational
 {
-    private:
+    public:
         int numerator;
         int denominator;
-    public:
-        int const n() const { int const a = numerator; return a; }
-        int const d() const { int const b = denominator; return b; }
         Rational(int, int);
         Rational(const Rational&);
         int lcm(int, int);
@@ -14,8 +11,8 @@ class Rational
 
         Rational operator + (Rational &t)
         {
-            int y = lcm(denominator, t.d());
-            int x = y / denominator * numerator + y / t.d() * t.n();
+            int y = lcm(denominator, t.denominator);
+            int x = y / denominator * numerator + y / t.denominator *t.numerator;
             int tx = gcd(x, y);
             if (tx > 1 || tx < -1)
             {
@@ -28,8 +25,8 @@ class Rational
 
         Rational operator - (Rational &t)
         {
-            int y = lcm(denominator, t.d());
-            int x = y / denominator * numerator - y / t.d() * t.n();
+            int y = lcm(denominator, t.denominator);
+            int x = y / denominator * numerator - y / t.denominator *t.numerator;
             int tx = gcd(x, y);
             if (tx > 1 || tx < -1)
             {
@@ -42,8 +39,8 @@ class Rational
 
         Rational operator * (Rational &t)
         {
-            int x = numerator * t.n();
-            int y = denominator * t.d();
+            int x = numerator * t.numerator;
+            int y = denominator * t.denominator;
             int tx = gcd(x, y);
             if (tx > 1 || tx < -1)
             {
@@ -56,8 +53,8 @@ class Rational
 
         Rational operator / (Rational &t)
         {
-            int x = numerator * t.d();
-            int y = denominator * t.n();
+            int x = numerator * t.denominator;
+            int y = denominator * t.numerator;
             int tx = gcd(x, y);
             if (tx > 1 || tx < -1)
             {
@@ -70,8 +67,8 @@ class Rational
 
         Rational operator = (Rational &t)
         {
-            numerator = t.n();
-            denominator = t.d();
+            numerator = t.numerator;
+            denominator = t.denominator;
             return *this;
         }
 };
@@ -94,8 +91,8 @@ Rational::Rational(int a, int b)
 }
 Rational::Rational(const Rational &t)
 {
-    numerator = t.n();
-    denominator = t.d();
+    numerator = t.numerator;
+    denominator = t.denominator;
 }
 
 int Rational::gcd(int a, int b)
@@ -116,5 +113,5 @@ void Rational::show()
         cout << 0 << endl;
         return;
     }
-    cout << numerator << "/" << denominator << "  小数形式:" << numerator/denominator << endl;
+    cout << numerator << "/" << denominator << endl;
 }
