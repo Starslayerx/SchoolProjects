@@ -116,5 +116,5 @@ void Rational::show()
         cout << 0 << endl;
         return;
     }
-    cout << numerator << "/" << denominator << "  小数形式:" << numerator/denominator << endl;
+    cout << numerator << "/" << denominator << "  小数形式:" << 1.0 * numerator/denominator << endl;
 }
