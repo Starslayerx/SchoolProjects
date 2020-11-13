@@ -4,6 +4,9 @@ class Rational
         int numerator;
         int denominator;
     public:
+        /* 
+         * method to get numerator and denominator
+         */
         int const n() const { int const a = numerator; return a; }
         int const d() const { int const b = denominator; return b; }
         Rational(int, int);
@@ -68,10 +71,10 @@ class Rational
             return temp;
         }
 
-        Rational operator = (Rational &t)
+        Rational operator = (const Rational &t)
         {
-            numerator = t.n();
-            denominator = t.d();
+            this->numerator = t.n();
+            this->denominator = t.d();
             return *this;
         }
 };
@@ -116,5 +119,5 @@ void Rational::show()
         cout << 0 << endl;
         return;
     }
-    cout << numerator << "/" << denominator << "  小数形式:" << 1.0 * numerator/denominator << endl;
+    cout << numerator << "/" << denominator << "  小数形式: " << 1.0 * numerator/denominator << endl;
 }
