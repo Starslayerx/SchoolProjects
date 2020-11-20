@@ -3,10 +3,11 @@ class Shape
     public:
         double area(){return 0;}
         double grith() {return 0;}
-        Shape() { cout << "Didn't initlize." << endl; }
+        Shape() 
+        { }
         void show()
         {
-            cout << "Shapde object" << endl;
+            cout << "(Shapde Object)" << endl;
         }
 };
 
@@ -16,7 +17,6 @@ class Circle : public Shape
         double r, circle_area, circle_grith;
         static const double PI;
     public:
-        Shape::Shape() {}
         Circle() { cout << "Didn't initlize." << endl; } 
         Circle(double a) : r{a}
         {
@@ -31,7 +31,7 @@ class Circle : public Shape
         ~Circle(){};
         double area();
         double grith();
-        void show();
+        virtual void show();
 };
 
 class Triangle : public Shape
@@ -44,11 +44,13 @@ class Triangle : public Shape
         {
             if( a <= 0 || b <= 0 || c <= 0)
             {
+                cout << "(Triangle Object) " << endl;
                 cout << "三角形三边必须大于零" << endl << endl;
                 return;
             }
             if(!test(x, y, z))
             {
+                cout << "(Triangle Object) " << endl;
                 cout << "不能构成三角形" << endl << endl;
                 return;
             }
@@ -58,12 +60,12 @@ class Triangle : public Shape
             triangle_grith = x + y + z;
         }
         bool test(double&, double&, double&);
-        void show();
+        virtual void show();
 };
 
 class Retangle : public Shape
 {
-}
+};
 
 const double Circle::PI{3.14159};
 double Circle::area()
@@ -77,13 +79,13 @@ double Circle::grith()
 
 void Circle::show()
 {
-    cout << "Circle Object: " << endl;
+    cout << "(Circle Object) " << endl;
     cout << "Area: " << circle_area << endl;
     cout << "Grith: " << circle_grith << endl << endl;
 }
 void Triangle::show()
 {
-    cout << "Triangle Object: " << endl;
+    cout << "(Triangle Object) " << endl;
     cout << "Area: " << triangle_area << endl;
     cout << "Grith: " << triangle_grith << endl << endl;
 }
