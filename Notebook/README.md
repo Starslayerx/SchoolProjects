@@ -1,2 +1,2 @@
 ## My c plus plus notes
-- class notes heavy_check_mark:
+- class notes :heavy_check_mark:
